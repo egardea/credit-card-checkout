@@ -54,3 +54,17 @@ $(function() {
   function myFunction() {
   document.querySelector("body > div.referer-warning").style.display = "none";
   }
+
+const markup = `
+  <div id="completed">
+    <div class="order" class="checkout">
+      <h2>Thank you for your purchase</h2>
+      <h5>You can now close the window</h5>
+    </div>
+  </div>
+`;
+function purchase() {
+  const page = document.getElementById('checkout');
+  page.innerHTML = '';
+  page.insertAdjacentHTML('afterbegin', markup);
+}

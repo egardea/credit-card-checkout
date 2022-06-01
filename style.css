@@ -444,7 +444,7 @@ Purchase Complete
   top: 20px;
   right: 20px;
   z-index: 99;
-  transform: rotateZ(45deg) scale(2.5);
+  transform: scale(2.5);
 }
 
 #completed .order h2 {

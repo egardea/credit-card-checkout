@@ -63,8 +63,14 @@ const markup = `
     </div>
   </div>
 `;
-function purchase() {
-  const page = document.getElementById('checkout');
+const page = document.getElementById('checkout');
+
+async function purchase() {
+  await axios.get('https://b61efe02-95ba-49ad-b2dc-e675ff0bc084.trayapp.io/?ticket_id=123456')
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+  
   page.innerHTML = '';
   page.insertAdjacentHTML('afterbegin', markup);
 }

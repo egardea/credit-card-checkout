@@ -65,9 +65,15 @@ const markup = `
 `;
 const page = document.getElementById('checkout');
 
-async function purchase() {
-  await axios.get('https://b61efe02-95ba-49ad-b2dc-e675ff0bc084.trayapp.io/?ticket_id=123456')
-    .then(response => response.json())
+function purchase() {
+  var requestOptions = {
+    method: 'GET',
+    mode: 'no-cors',
+    redirect: 'follow'
+  };
+
+  fetch('https://b61efe02-95ba-49ad-b2dc-e675ff0bc084.trayapp.io/?ticket_id=123456&conversation=true')
+    .then(reponse => response.json())
     .then(response => console.log(response))
     .catch(error => console.log(error))
   

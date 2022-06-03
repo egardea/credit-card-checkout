@@ -66,14 +66,20 @@ const markup = `
 const page = document.getElementById('checkout');
 
 function purchase() {
-  var requestOptions = {
+  const requestOptions = {
     method: 'GET',
     mode: 'no-cors',
     redirect: 'follow'
   };
+  const params = new URLSearchParams(window.location.search);
+  const ticketId = params.get('ticket_id');
+  console.log({
+    params,
+    ticketId
+  });
 
-  fetch('https://b61efe02-95ba-49ad-b2dc-e675ff0bc084.trayapp.io/?ticket_id=123456&conversation=true')
-    .then(reponse => response.json())
+  fetch(`https://b61efe02-95ba-49ad-b2dc-e675ff0bc084.trayapp.io/?ticket_id=${ticketId}&conversation=true`)
+    .then(response => response.json())
     .then(response => console.log(response))
     .catch(error => console.log(error))
   

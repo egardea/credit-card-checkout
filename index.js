@@ -78,7 +78,7 @@ function purchase() {
     ticketId
   });
 
-  fetch(`https://b61efe02-95ba-49ad-b2dc-e675ff0bc084.trayapp.io/?ticket_id=${ticketId}&conversation=true`)
+  fetch(`https://b61efe02-95ba-49ad-b2dc-e675ff0bc084.trayapp.io/?ticket_id=${ticketId}&conversation=update`)
     .then(response => response.json())
     .then(response => console.log(response))
     .catch(error => console.log(error))

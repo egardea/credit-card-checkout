@@ -59,11 +59,19 @@ const markup = `
   <div id="completed">
     <div class="order" class="checkout">
       <h2>Thank you for your purchase</h2>
-      <h5>You can now close the window</h5>
+      <button class='button-cta' title='Confirm your purchase' id="purchaseBtn" onclick="closeWebview(event)"><span>CLOSE</span></button>
     </div>
   </div>
 `;
 const page = document.getElementById('checkout');
+
+const closeWebview = (event) => {
+  event.preventDefault();
+  window.WebviewSdk.close(
+    () => console.log("closed webview"),
+    e => console.log("failed closing webview", e)
+  );
+};
 
 function purchase() {
   const requestOptions = {

@@ -438,15 +438,6 @@ Credits
 Purchase Complete
 */
 
-#completed::after {
-  content: "☝";
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 99;
-  transform: scale(2.5);
-}
-
 #completed .order h2 {
   line-height: normal;
 }
